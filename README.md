@@ -4,6 +4,10 @@
 
 This GitHub repository contains the project work completed by the 11th-grade team. The project involves creating a web-based computer store price list and configuration builder along with an administrative application for managing products using C#.
 
+## Trello board
+
+https://trello.com/b/rbB5EXmA
+
 ## Features
 
 ### Administrative Application (Gubacsi Áron[Team Member 1] - C#)
