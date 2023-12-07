@@ -1,2 +1,5 @@
 ﻿using static Util.Base;
-println("Hello, World!");
+using dataStorage;
+
+dataReader.dataReader dr = new();
+List<computerParts> data = dr.readData("database.txt");

@@ -1,4 +1,6 @@
-﻿public static class ListExtensions
+﻿// ReSharper disable CheckNamespace
+namespace Util;
+public static class ListExtensions
 {
     public static int ToMultiple(this List<int> list)
     {

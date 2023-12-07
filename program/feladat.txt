@@ -1,0 +1,32 @@
+Mindenkire vonatkozik:
+    A projektben számítógépbolt árlista és konfiguráció összeállító weblapját, és C#-ban a termékek adminisztrációs alkalmazását kell elkészíteni.
+    A számítógépnek legalább az alábbi jellemzőivel kell dolgoznod (lehet többet is):
+        •	Alaplap
+        •	Processzor
+        •	Memória
+        •	Grafikus kártya (ha integrált, akkor lehet annyit is írni, hogy integrált)
+        •	HDD és/vagy SSD
+        •	Monitor
+        •	Egér
+        •	Billentyűzet
+    Az alkatrészeknek a következő paraméterekkel kell minimálisan rendelkezni:
+        •	Típusa (ezt lehet rövidítve, vagy azonosítóval is, pl. CPU)
+        •	Neve
+        •	Paraméterek (órajel, memória méretet, háttértár mérete,…)
+        •	Ára Ft-ban
+        
+
+1. csapattag (adminisztrációs alkalmazás készítése C# nyelven):
+    Készíts C# alkalmazást, amelyben be lehet vinni számítógépalkatrészt, és a bevitt adatokat txt állományba kiírja. Az állományban minden sorban egy alkatrész legyen ,és pontosvesszővel legyenek elválasztva a fent felsorol paraméterekkel (típus, név, …).
+    Pl. CPU;Intel Core i5-13600K; 3.5GHz 14-Core;130000
+    A bevitel után lehessen keresni az adatok között! A keresés legalább az alábbiakat tudja megoldani:
+        •	Keresés alkatrész típusára, nevére
+        •	Keresés adott árak között
+        •	Statisztika készítése az alkatrészekből (például mennyi Intel, mennyi AMD processzor van, mennyi Nvidia, mennyi AMD kártya)
+        •	Akciós árak. Adott százalék beállítása, és adott termékkategória vagy minden termék árát csökkenti adott százalékkal.
+    Ötletek plusz, kiegészítő funkciókra (nem kötelező mindet megvalósítani):
+        •	Bevitel során ellenőrizni, hogy már szerepel-e az állományban az alaktrész.
+        •	Bevitt adat paramétereinek módosítása.
+        •	Összetett keresési feltételek.
+        •	A fent felsoroltaktól eltérő alkatrészek felvitele.
+        •	Notebook vagy asztali gépek kezelése külön vagy egyben.
