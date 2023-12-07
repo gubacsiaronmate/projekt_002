@@ -3,15 +3,15 @@
 namespace Util;
 class Base
 {
-    public static object Input(object? prompt)
+    public static string Input(object? prompt)
     {
         Console.Write(prompt);
         object? usrinp = Console.ReadLine();
         if (usrinp == null) return "";
-        else return usrinp;
+        else return typeConversion.String(usrinp);
     }
 
     public static void print(object? prompt) => Console.Write(prompt);
 
-    public static void println(string prompt) => Console.WriteLine(prompt);
+    public static void println(object? prompt) => Console.WriteLine(prompt);
 }

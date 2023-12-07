@@ -1,6 +1,7 @@
 // ReSharper disable CheckNamespace
 // ReSharper disable InconsistentNaming
 using dataStorage;
+using static Util.typeConversion;
 namespace dataReader;
 
 class dataReader
@@ -23,6 +24,8 @@ class dataReader
             Felvetelizo uj = new Felvetelizo(_nev, _nem, _pont, _szak, _nyelv);
             adatok.Add(uj);
             */
+            string[] line = sr.ReadLine()!.Split(";");
+            data.Add(new computerParts(line[0], line[1], line[2], Int(line[3])));
         }
         sr.Close();
         fs.Close();
