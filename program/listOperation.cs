@@ -1,4 +1,5 @@
 ﻿// ReSharper disable CheckNamespace
+// ReSharper disable InconsistentNaming
 namespace Util;
 public static class ListExtensions
 {

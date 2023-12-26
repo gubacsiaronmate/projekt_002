@@ -3,7 +3,7 @@
 namespace Util;
 class Base
 {
-    public static string Input(object? prompt)
+    public static string input(object? prompt)
     {
         Console.Write(prompt);
         object? usrinp = Console.ReadLine();

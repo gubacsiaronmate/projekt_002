@@ -1,9 +1,11 @@
-﻿using static Util.Base;
-using dataStorage;
+﻿// ReSharper disable InconsistentNaming
+// ReSharper disable CheckNamespace
+namespace Main;
 
-dataReader.dataReader dr = new();
-List<computerParts> data = dr.readData("database.txt");
-foreach (computerParts parts in data)
+public static class Program
 {
-    println(parts);
+    public static void Main(string[] args)
+    {
+        
+    }
 }
