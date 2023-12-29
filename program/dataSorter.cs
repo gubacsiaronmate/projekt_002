@@ -15,51 +15,51 @@ class dataSorter
             switch (part.getTypeValue().ToLower())
             {
                 case "motherboard":
-                    if (data.ContainsKey("MotherBoard"))
-                    { data["MotherBoard"].Add(part); break; }
-                    data["MotherBoard"] = new List<computerParts> { part };
+                    if (data.ContainsKey("motherboard"))
+                    { data["motherboard"].Add(part); break; }
+                    data["motherboard"] = new List<computerParts> { part };
                     break;
 
                 case "cpu":
-                    if (data.ContainsKey("CPU"))
-                    { data["CPU"].Add(part); break; }
-                    data["CPU"] = new List<computerParts> { part };
+                    if (data.ContainsKey("cpu"))
+                    { data["cpu"].Add(part); break; }
+                    data["cpu"] = new List<computerParts> { part };
                     break;
 
                 case "memory":
-                    if (data.ContainsKey("Memory"))
-                    { data["Memory"].Add(part); break; }
-                    data["Memory"] = new List<computerParts> { part };
+                    if (data.ContainsKey("memory"))
+                    { data["memory"].Add(part); break; }
+                    data["memory"] = new List<computerParts> { part };
                     break;
 
                 case "gpu":
-                    if (data.ContainsKey("GPU"))
-                    { data["GPU"].Add(part); break; }
-                    data["GPU"] = new List<computerParts> { part };
+                    if (data.ContainsKey("gpu"))
+                    { data["gpu"].Add(part); break; }
+                    data["gpu"] = new List<computerParts> { part };
                     break;
 
                 case "storage":
-                    if (data.ContainsKey("Storage"))
-                    { data["Storage"].Add(part); break; }
-                    data["Storage"] = new List<computerParts> { part };
+                    if (data.ContainsKey("storage"))
+                    { data["storage"].Add(part); break; }
+                    data["storage"] = new List<computerParts> { part };
                     break;
 
                 case "display":
-                    if (data.ContainsKey("Display"))
-                    { data["Display"].Add(part); break; }
-                    data["Display"] = new List<computerParts> { part };
+                    if (data.ContainsKey("display"))
+                    { data["display"].Add(part); break; }
+                    data["display"] = new List<computerParts> { part };
                     break;
 
                 case "mouse":
-                    if (data.ContainsKey("Mouse"))
-                    { data["Mouse"].Add(part); break; }
-                    data["Mouse"] = new List<computerParts> { part };
+                    if (data.ContainsKey("mouse"))
+                    { data["mouse"].Add(part); break; }
+                    data["mouse"] = new List<computerParts> { part };
                     break;
 
                 case "keyboard":
-                    if (data.ContainsKey("Keyboard"))
-                    { data["Keyboard"].Add(part); break; }
-                    data["Keyboard"] = new List<computerParts> { part };
+                    if (data.ContainsKey("keyboard"))
+                    { data["keyboard"].Add(part); break; }
+                    data["keyboard"] = new List<computerParts> { part };
                     break;
 
             }

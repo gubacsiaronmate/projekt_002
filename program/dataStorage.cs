@@ -22,7 +22,7 @@ internal class computerParts
     public string getParametersValue() => Parameters;
     public int getPriceValue() => Price;
     
-    public string ToMassPrint() => $"Type: {Type}; Name: {Name}; Parameters: {Parameters}; Price: {Price};";
+    public string ToMassPrintString() => $"Type: {Type}; Name: {Name}; Parameters: {Parameters}; Price: {Price};";
     
-    public string ToSinglePrint() => $"Type: {Type}\nName: {Name}\nParameters: {Parameters}\nPrice: {Price}";
+    public string ToSinglePrintString() => $"Type: {Type}\nName: {Name}\nParameters: {Parameters}\nPrice: {Price}";
 }
