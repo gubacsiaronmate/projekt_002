@@ -1,13 +1,14 @@
+// ReSharper disable ClassNeverInstantiated.Global
 // ReSharper disable InconsistentNaming
 // ReSharper disable CheckNamespace
 using static Util.typeConversion;
 using static Util.Base;
 using dataStorage;
-namespace applyDiscount;
+namespace applyDiscountNamespace;
 
 class discountClass
 {
-    public static Dictionary<string, List<computerParts>> applyDiscount(Dictionary<string, List<computerParts>> data)
+    public Dictionary<string, List<computerParts>> applyDiscount(Dictionary<string, List<computerParts>> data)
     {
         string[] dataKeys = data.Keys.ToArray();
         int discountPercentage = 1;

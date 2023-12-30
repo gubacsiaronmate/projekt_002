@@ -1,3 +1,4 @@
+// ReSharper disable ClassNeverInstantiated.Global
 // ReSharper disable InconsistentNaming
 // ReSharper disable CheckNamespace
 using static Util.typeConversion;

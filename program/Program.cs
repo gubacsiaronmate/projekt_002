@@ -1,27 +1,37 @@
-﻿// ReSharper disable InconsistentNaming
-// ReSharper disable CheckNamespace
+﻿// ReSharper disable CheckNamespace
+// ReSharper disable InconsistentNaming
+using static dataSorter.dataSorter;
+using static dataSearch.dataSearch;
 using static Util.typeConversion;
+using applyDiscountNamespace;
+using System.Globalization;
 using static Util.Base;
+using dataStorage;
 namespace Main;
 
 public static class Program
 {
-    public static void Main(string[] args)
+    public static void Main()
     {
-        // Variables:
+        // Text variables for printing:
         string headLine = "Welcome to our Computer Parts warehouse!";
         string optText = "Please choose from this menu:";
-        string[] options = { "[A]> Search Parts", "[B]> Add Part", "[C]> Print All", "[D]> Show Statistics", "[E]> Apply Discount", "[X]> Exit" };
-        string[] keys = {"A", "B", "C", "D", "E", "X"};
+        string[] options = { "[A]> Search Parts", "[B]> Add Part", "[C]> Print All", "[D]> Show Statistics", "[E]> Apply Discount", "[F]> HTML generator", "[X]> Exit" };
+        string[] keys = {"A", "B", "C", "D", "E", "F", "X"};
         string howToChooseText = "Press the corresponding key to continue";
         int numOfSpaces = 3;
         string starLine = new string('*', (headLine.Length + (2 * numOfSpaces) + 2));
         string spaceLine = new string(' ', (headLine.Length + (2 * numOfSpaces)));
         string smallSpacer = new string(' ', numOfSpaces);
         
+        // Functionality variables:
+        Dictionary<string, List<computerParts>> data = sortInitialData();
+        string[] dataKeys = data.Keys.ToArray();
+        string filepath = "database.txt";
+        
         // Menu displayed:
         println(
-            $"{starLine}"+
+            $"\n{starLine}"+
                 $"\n*{spaceLine}*"+
                 $"\n*{smallSpacer}{headLine}{smallSpacer}*"+
                 $"\n*{spaceLine}*"+
@@ -51,32 +61,72 @@ public static class Program
         switch (pressedKey)
         {
             case "A":
-                println(String(pressedKey));
+                List<string> searchResults = searchDatabase(
+                    input("\nEnter the search term you want to search by:  "), data);
+                foreach (var result in searchResults) { println(result); }
+                Main();
                 break;
             
             case "B":
-                println(String(pressedKey));
+                println("");
+                data = sortAddedPart(data, computerParts.getNewPart());
+                new dataWriter.dataWriter().saveData(data, filepath);
+                println("New part added!");
+                Main();
                 break;
             
             case "C":
-                println(String(pressedKey));
+                println("");
+                foreach (var key in dataKeys)
+                {
+                    foreach (var part in data[key])
+                    {
+                        println(part.ToMassPrintString());
+                    }
+                }
+                Main();
                 break;
             
             case "D":
-                println(String(pressedKey));
+                println("");
+                showStatistics(data);
+                Main();
                 break;
             
             case "E":
-                println(String(pressedKey));
+                println("");
+                data = new discountClass().applyDiscount(data);
+                new dataWriter.dataWriter().saveData(data, filepath);
+                println("Discount applied!");
+                Main();
+                break;
+            
+            case "F":
+                println("");
+                println("Code generated at \"~\\projekt_002\\program\\bin\\Debug\\net6.0\\index.html\"!");
+                Main();
                 break;
             
             case "X":
-                println(String(pressedKey));
+                new dataWriter.dataWriter().saveData(data, filepath);
+                Exit();
                 break;
         }
     }
 
     private static ConsoleKeyInfo getPressedKey() => Console.ReadKey();
+
+    private static void Exit() => Environment.Exit(0);
+
+    private static void showStatistics(Dictionary<string, List<computerParts>> data)
+    {
+        println("");
+        string[] dataKeys = data.Keys.ToArray();
+        foreach (var category in dataKeys)
+        {
+            println($"{CultureInfo.CurrentCulture.TextInfo.ToTitleCase(category)}: {data[category].Count}");
+        }
+    }
 }
 
 /*

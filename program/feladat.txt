@@ -30,3 +30,11 @@ Mindenkire vonatkozik:
         •	Összetett keresési feltételek.
         •	A fent felsoroltaktól eltérő alkatrészek felvitele.
         •	Notebook vagy asztali gépek kezelése külön vagy egyben.
+        
+    Kiegészítés (a dolgozat helyett):
+        Az állomány létrehozása után lehessen generálni egy HTML kódot (pl. Flexbox
+        használatával), amelyben a bevitt adatok lesznek megjelenítve. Elég csak HTML
+        kódrészletet generálni, amit, ha bemásolunk egy HTML oldalba, akkor meg lesz jelenítve.
+        Készíts hozzá CSS kódot is, de azt nem kell generálni, azt elég, ha kézzel megírod (pl.
+        a Flexbox formázásaihoz). Tehát itt igazából csak a div-eket kell legenerálni.
+        Az eredményt írd ki egy txt állományba!

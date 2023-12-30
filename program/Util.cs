@@ -1,5 +1,5 @@
-﻿// ReSharper disable CheckNamespace
-// ReSharper disable InconsistentNaming
+﻿// ReSharper disable InconsistentNaming
+// ReSharper disable CheckNamespace
 namespace Util;
 class Base
 {
