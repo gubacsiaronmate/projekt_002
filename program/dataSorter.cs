@@ -1,16 +1,17 @@
 // ReSharper disable InconsistentNaming
 // ReSharper disable CheckNamespace
+using static Util.Base;
 using dataStorage;
 namespace Main;
 
 class dataSorter
 {
-    public static Dictionary<String, List<computerParts>> sortData()
+    public static Dictionary<String, List<computerParts>> sortInitialData()
     {
         dataReader.dataReader dr = new();
-        List<computerParts> partialData = dr.readData("database.txt");
+        List<computerParts> sortableData = dr.loadData("database.txt");
         Dictionary<String, List<computerParts>> data = new();
-        foreach (computerParts part in partialData)
+        foreach (computerParts part in sortableData)
         {
             switch (part.getTypeValue().ToLower())
             {
@@ -64,6 +65,18 @@ class dataSorter
 
             }
         }
+        return data;
+    }
+
+    public static Dictionary<string, List<computerParts>> sortAddedPart(
+        Dictionary<string, List<computerParts>> data, computerParts newPart)
+    {
+        // check if new part's type is correct:
+        if (!data.Keys.ToArray().Contains(newPart.getTypeValue()))
+        { println($"Type \"{newPart.getTypeValue()}\" is not a valid type in our database!"); return data; }
+        
+        // Add new part:
+        data[newPart.getTypeValue()].Add(newPart);
         return data;
     }
 }

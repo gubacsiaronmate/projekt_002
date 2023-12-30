@@ -95,4 +95,6 @@ public static class Program
     *   opt     * ==> *{smallSpacer}{opt}{' ' * (headLine.Length - opt.Length + numOfSpaces)}*
 
 */
- 
+
+// dataReader.dataReader dr = new();
+// List<computerParts> sortableData = dr.loadData("database.txt");

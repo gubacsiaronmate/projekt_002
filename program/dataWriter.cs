@@ -7,15 +7,16 @@ namespace dataWriter;
 
 class dataWriter
 {
-    public static void addPart()
+    public void saveData(Dictionary<string, List<computerParts>> data, string filepath)
     {
-        println("Enter the details of the new computer part here:");
-        computerParts newPart = new(
-            input("Type:  "),
-            input("Name:  "),
-            input("Parameters:  "),
-            Int(input("Price in HUF:  "))
-        );
-        
+        StreamWriter sw = new(filepath);
+        string[] dataKeys = data.Keys.ToArray();
+        foreach (var key in dataKeys)
+        {
+            foreach (var part in data[key])
+            {
+                sw.WriteLine(part.ToWritableString());
+            }
+        }
     }
 }
