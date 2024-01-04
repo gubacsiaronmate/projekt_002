@@ -8,7 +8,7 @@ class Base
         Console.Write(prompt);
         object? usrinp = Console.ReadLine();
         if (usrinp == null) return "";
-        else return typeConversion.String(usrinp);
+        return typeConversion.String(usrinp).Trim('"');
     }
 
     public static void print(object? prompt) => Console.Write(prompt);

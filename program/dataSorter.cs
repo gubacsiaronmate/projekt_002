@@ -73,11 +73,11 @@ class dataSorter
         Dictionary<string, List<computerParts>> data, computerParts newPart)
     {
         // check if new part's type is correct:
-        if (!data.Keys.ToArray().Contains(newPart.getTypeValue()))
+        if (!data.Keys.ToArray().Contains(newPart.getTypeValue().ToLower()))
         { println($"Type \"{newPart.getTypeValue()}\" is not a valid type in our database!"); return data; }
         
         // Add new part:
-        data[newPart.getTypeValue()].Add(newPart);
+        data[newPart.getTypeValue().ToLower()].Add(newPart);
         return data;
     }
 }

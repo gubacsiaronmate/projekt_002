@@ -16,5 +16,6 @@ class dataWriter
                 sw.WriteLine(part.ToWritableString());
             }
         }
+        sw.Close();
     }
 }

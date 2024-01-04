@@ -1,0 +1,8 @@
+#wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#category{
+    border: 3px solid #282828;
+}

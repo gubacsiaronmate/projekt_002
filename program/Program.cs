@@ -1,8 +1,8 @@
 ﻿// ReSharper disable CheckNamespace
 // ReSharper disable InconsistentNaming
+using static htmlGenerator.Generator;
 using static dataSorter.dataSorter;
 using static dataSearch.dataSearch;
-using static Util.typeConversion;
 using applyDiscountNamespace;
 using System.Globalization;
 using static Util.Base;
@@ -31,7 +31,8 @@ public static class Program
         
         // Menu displayed:
         println(
-            $"\n{starLine}"+
+                $"\n*Note that the parts inside the \"database.txt\" are entirely fictional and was generated using ChatGPT.*\n\n"+
+                $"\n{starLine}"+
                 $"\n*{spaceLine}*"+
                 $"\n*{smallSpacer}{headLine}{smallSpacer}*"+
                 $"\n*{spaceLine}*"+
@@ -64,7 +65,7 @@ public static class Program
                 List<string> searchResults = searchDatabase(
                     input("\nEnter the search term you want to search by:  "), data);
                 foreach (var result in searchResults) { println(result); }
-                Main();
+                continueCycle();
                 break;
             
             case "B":
@@ -72,7 +73,7 @@ public static class Program
                 data = sortAddedPart(data, computerParts.getNewPart());
                 new dataWriter.dataWriter().saveData(data, filepath);
                 println("New part added!");
-                Main();
+                continueCycle();
                 break;
             
             case "C":
@@ -84,13 +85,13 @@ public static class Program
                         println(part.ToMassPrintString());
                     }
                 }
-                Main();
+                continueCycle();
                 break;
             
             case "D":
                 println("");
                 showStatistics(data);
-                Main();
+                continueCycle();
                 break;
             
             case "E":
@@ -98,13 +99,14 @@ public static class Program
                 data = new discountClass().applyDiscount(data);
                 new dataWriter.dataWriter().saveData(data, filepath);
                 println("Discount applied!");
-                Main();
+                continueCycle();
                 break;
             
             case "F":
                 println("");
+                generateHtml("index.html", data);
                 println("Code generated at \"~\\projekt_002\\program\\bin\\Debug\\net6.0\\index.html\"!");
-                Main();
+                continueCycle();
                 break;
             
             case "X":
@@ -126,6 +128,13 @@ public static class Program
         {
             println($"{CultureInfo.CurrentCulture.TextInfo.ToTitleCase(category)}: {data[category].Count}");
         }
+    }
+
+    private static void continueCycle()
+    {
+        println("\nPress any key to continue....\n");
+        ConsoleKeyInfo? pressedKey = getPressedKey();
+        Main();
     }
 }
 
