@@ -72,11 +72,8 @@ class dataSorter
     public static Dictionary<string, List<computerParts>> sortAddedPart(
         Dictionary<string, List<computerParts>> data, computerParts newPart)
     {
-        // check if new part's type is correct:
         if (!data.Keys.ToArray().Contains(newPart.getTypeValue().ToLower()))
         { println($"Type \"{newPart.getTypeValue()}\" is not a valid type in our database!"); return data; }
-        
-        // Add new part:
         data[newPart.getTypeValue().ToLower()].Add(newPart);
         return data;
     }

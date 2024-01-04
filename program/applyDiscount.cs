@@ -18,8 +18,7 @@ class discountClass
             println("Incorrect format! Please do not use % when entering discount!");
             applyDiscount(data);
         }
-        // Console.Write("Enter discount percentage:  ");
-        // discountPercentage = Convert.ToInt32(Console.ReadLine());
+        
         string target = input("Enter which category should this discount apply to (enter \"all\" for all):  ").ToLower();
         if (target == "all")
         {

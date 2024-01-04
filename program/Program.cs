@@ -50,10 +50,8 @@ public static class Program
                 $"\n{starLine}\n"
         );
         
-        // Menu Input:
         string pressedKey = getPressedKey().KeyChar.ToString().ToUpper();
         
-        // Menu Input Handling:
         while (Array.IndexOf(keys, pressedKey) == -1)
         {
             println(" <- This is an invalid input! Choose from the menu above!\n");
