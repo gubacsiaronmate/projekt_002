@@ -13,7 +13,7 @@ class Generator
         sw.WriteLine("<div id=\"wrapper\">");
         foreach (var key in data.Keys.ToArray())
         {
-            sw.WriteLine($"\t<div id=\"category\">{key}: ");
+            sw.WriteLine($"\t<div id=\"category\">{key.ToUpper()}: ");
             foreach (var part in data[key])
             {
                 sw.WriteLine($"\t\t<p>{part.ToMassPrintString()}</p>");
